@@ -22,6 +22,14 @@ exports.template = function (grunt, init, done) {
     init.prompt('licenses'),
     init.prompt('author_name'),
     init.prompt('version'),
+    // Custom
+    {
+      name: 'appId',
+      message: 'Application ID'
+    }, {
+      name: 'orgUrl',
+      message: 'Organization URL'
+    }
   ], function (err, props) {
     // Files to copy (and process).
     var files = init.filesToCopy(props);

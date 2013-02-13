@@ -48,8 +48,8 @@ module.exports = function (grunt) {
 
     jshint: {
       all: [
-        'app/scripts/*.js',
-        'app/widgets/*.js'
+        'app/scripts/[^templates].js',
+        'app/widgets/**/*.js'
       ]
     },
 
