@@ -1,0 +1,22 @@
+{
+  "name": "grunt-init-hull",
+  "version": "0.1.0",
+  "description": "A grunt-init plugin to bootstrap a Hull.io project",
+  "main": "template.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hull/grunt-init-hull.git"
+  },
+  "keywords": [
+    "grunt-init",
+    "Hull.io",
+    "hull"
+  ],
+  "author": "Xavier Cambar <xavier@hull.io>",
+  "license": "MIT",
+  "gitHead": "034d2b3c08335e4d6b29b3321dba23aa726aa7e6",
+  "readmeFilename": "README.md"
+}

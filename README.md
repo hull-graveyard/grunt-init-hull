@@ -37,6 +37,9 @@ This is the default task. It compiles all your assets so they are production-rea
 
 Starts a static server (on port 9000), bundled with LiveReload, to run your application on your workstation.
 
+# License
+
+MIT
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
 [grunt]: http://gruntjs.com/
