@@ -4,7 +4,7 @@
 exports.description = 'Create a complete Hull.io application.';
 
 // Template-specific notes to be displayed before question prompts.
-exports.notes = 'Be sure to have your ApplicationId and OrganizationURL ready.\n If not, login to http://hull.io ans create an app first.';
+exports.notes = 'Be sure to have your ApplicationId and OrganizationURL ready.\n If not, login to http://hull.io and create an app first.';
 
 // Any existing file or directory matching this wildcard will cause a warning.
 exports.warnOn = '*';
