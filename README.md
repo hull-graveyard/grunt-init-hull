@@ -2,7 +2,9 @@
 > Create a complete [Hull.io][] application with [grunt-init][].
 
 ## Installation
-If you haven't already done so, install [grunt-init][].
+If you haven't already done so, install [grunt-init][] by running:
+
+> npm install -g grunt-init
 
 Once grunt-init is installed, place this template in your `~/.grunt-init/`
 directory (`%USERPROFILE%\.grunt-init\` on Windows). It's recommended that you
@@ -18,6 +20,7 @@ and answer the prompts.
 
 ```
 grunt-init hull
+npm install
 ```
 
 > Note that this template will generate files in the current directory, so
