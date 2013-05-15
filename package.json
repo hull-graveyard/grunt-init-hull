@@ -1,6 +1,6 @@
 {
   "name": "grunt-init-hull",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A grunt-init plugin to bootstrap a Hull.io project",
   "main": "template.js",
   "scripts": {
