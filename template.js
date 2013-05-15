@@ -36,7 +36,7 @@ exports.template = function (grunt, init, done) {
 
     // Gather standard and additional dependencies.
     var devDependencies = {
-      "grunt": "0.4.0rc7",
+      "grunt": "~0.4.0",
       "grunt-contrib-handlebars" : "0.5.4",
       "grunt-contrib-copy": "0.4.0rc7",
       "grunt-contrib-concat": "0.1.2",
