@@ -77,7 +77,7 @@ exports.template = function (grunt, init, done) {
     };
 
     // Generate a component.json file.
-    init.writePackageJSON('component.json', {
+    init.writePackageJSON('bower.json', {
       name: props.name,
       version: props.version,
       dependencies: dependencies
