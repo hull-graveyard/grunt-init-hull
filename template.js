@@ -36,23 +36,24 @@ exports.template = function (grunt, init, done) {
 
     // Gather standard and additional dependencies.
     var devDependencies = {
-      "grunt": "~0.4.0",
-      "grunt-contrib-handlebars" : "0.5.4",
-      "grunt-contrib-copy": "0.4.0rc7",
-      "grunt-contrib-concat": "0.1.2",
-      "grunt-contrib-uglify": "0.1.1",
-      "grunt-contrib-jshint": "0.1.1",
-      "grunt-contrib-mincss": "0.4.0rc7",
-      "grunt-contrib-connect": "0.1.2",
-      "grunt-contrib-clean": "0.4.0",
-      "grunt-contrib-htmlmin": "0.1.1rc7",
-      "grunt-contrib-imagemin": "0.1.1rc8",
-      "grunt-contrib-livereload": "0.1.0rc8",
-      "grunt-bower-hooks": "~0.1.2",
-      "grunt-usemin": "~0.1.4",
+      "grunt": "~0.4.1",
+      "grunt-contrib-handlebars" : "~0.5.9",
+      "grunt-contrib-copy": "0.4.1",
+      "grunt-contrib-concat": "0.3.0",
+      "grunt-contrib-uglify": "0.2.2",
+      "grunt-contrib-jshint": "0.6.2",
+      "grunt-contrib-cssmin": "0.6.1",
+      "grunt-contrib-connect": "0.3.0",
+      "grunt-contrib-clean": "0.5.0",
+      "grunt-contrib-htmlmin": "0.1.3",
+      "grunt-contrib-imagemin": "0.1.4",
+      "grunt-contrib-livereload": "~0.1.2",
+      "grunt-bower-hooks": "~0.3.0",
+      "grunt-usemin": "~0.1.12",
       "grunt-regarde": "~0.1.1",
-      "grunt-open": "~0.1.0",
-      "matchdep": "~0.1.1"
+      "grunt-open": "~0.2.1",
+      "matchdep": "~0.1.2",
+      "bower": "~1.1.0"
     };
 
     init.addLicenseFiles(files, props.licenses);
@@ -64,7 +65,10 @@ exports.template = function (grunt, init, done) {
     init.writePackageJSON('package.json', _.extend(props, {
       keywords: [],
       node_version: '0.8.x',
-      devDependencies: devDependencies
+      devDependencies: devDependencies,
+      scripts: {
+        postinstall: "$(npm bin)/bower install"
+      }
     }));
 
     // Gather client-side, browser dependencies
