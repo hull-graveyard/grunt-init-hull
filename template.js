@@ -47,10 +47,9 @@ exports.template = function (grunt, init, done) {
       "grunt-contrib-clean": "0.5.0",
       "grunt-contrib-htmlmin": "0.1.3",
       "grunt-contrib-imagemin": "0.1.4",
-      "grunt-contrib-livereload": "~0.1.2",
       "grunt-bower-hooks": "~0.3.0",
       "grunt-usemin": "~0.1.12",
-      "grunt-regarde": "~0.1.1",
+      "grunt-contrib-watch": "~0.5.1",
       "grunt-open": "~0.2.1",
       "matchdep": "~0.1.2",
       "bower": "~1.1.0"
