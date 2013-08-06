@@ -22,12 +22,12 @@ module.exports = function (grunt) {
 
     // default watch configuration
     watch: {
-      widgets: {
-        files: ['app/widgets/**/*.js'],
+      components: {
+        files: ['app/components/**/*.js'],
         tasks: ['concat']
       },
       handlebars: {
-        files: ['app/widgets/**/*.hbs'],
+        files: ['app/components/**/*.hbs'],
         tasks: ['handlebars']
       },
       compiled: {
@@ -46,20 +46,20 @@ module.exports = function (grunt) {
     jshint: {
       all: [
         'app/scripts/[^templates].js',
-        'app/widgets/**/*.js'
+        'app/components/**/*.js'
       ]
     },
 
     handlebars: {
       compile: {
         files: {
-          "app/scripts/templates.js" : ["app/widgets/**/*.hbs"]
+          "app/scripts/templates.js" : ["app/components/**/*.hbs"]
         },
         options: {
           wrapped: false,
           namespace: "Hull.templates",
           processName: function (filename) {
-            return filename.replace(/^app\/widgets\//, '').replace(/\.hbs$/, '');
+            return filename.replace(/^app\/components\//, '').replace(/\.hbs$/, '');
           }
         }
       }
@@ -161,7 +161,7 @@ module.exports = function (grunt) {
         separator: "\n\n\n\n//--------\n\n\n"
       },
       dist: {
-        src: ['app/widgets/**/*.js'],
+        src: ['app/components/**/*.js'],
         dest: 'app/scripts/widgets.js'
       }
     }
