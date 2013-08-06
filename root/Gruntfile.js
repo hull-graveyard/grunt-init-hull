@@ -1,9 +1,4 @@
 /*global module:true*/
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-var mountFolder = function (connect, dir) {
-  return connect.static(require('path').resolve(dir));
-};
-
 var yeomanConfig = {
   app: 'app',
   dist: 'dist'
@@ -21,7 +16,7 @@ module.exports = function (grunt) {
 
     open: {
       server: {
-        url: 'http://localhost:<%= connect.livereload.options.port %>'
+        url: 'http://localhost:<%= connect.options.port %>'
       }
     },
 
@@ -35,14 +30,16 @@ module.exports = function (grunt) {
         files: ['app/widgets/**/*.hbs'],
         tasks: ['handlebars']
       },
-      livereload: {
+      compiled: {
+        options: {
+          livereload: true
+        },
         files: [
           'app/*.html',
           '{.tmp,app}/styles/*.css',
           '{.tmp,app}/scripts/*.js',
           'app/images/*.{png,jpg,jpeg}'
-        ],
-        tasks: ['livereload']
+        ]
       }
     },
 
@@ -69,16 +66,12 @@ module.exports = function (grunt) {
     },
 
     connect: {
-      livereload: {
+      options: {
+        port: 9000
+      },
+      app: {
         options: {
-          port: 9000,
-          middleware: function (connect) {
-            return [
-              lrSnippet,
-              mountFolder(connect, '.tmp'),
-              mountFolder(connect, 'app')
-            ];
-          }
+          base: 'app'
         }
       }
     },
@@ -175,21 +168,15 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.renameTask('regarde', 'watch');
-
-  grunt.renameTask('mincss', 'cssmin');
-
   grunt.registerTask('server', [
     'clean:server',
-    'livereload-start',
-    'connect:livereload',
+    'connect',
     'open',
     'watch'
   ]);
 
   grunt.registerTask('test', [
     'clean:server',
-    'connect:livereload',
     'watch'
   ]);
 
